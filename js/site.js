@@ -1,22 +1,20 @@
 // ----- CONTROLLER function -----//
+   
+function getString() {
 
-    
-function getString () {
+    document.getElementById("alert").classList.add("invisible");
 
     // Gets the user input string from the DOM and assigns it to a variable
     let userString = document.getElementById("userString").value;
 
-    // Converts userString toUpperCase()
-    userString = userString.toUpperCase()
+    // Converts all of the character to lower case to allow for accurate comparison results
+    userString = userString.toLowerCase();
 
     // Calls the Logic function and assigns the return value to a variable
     let reversedString = reverse(userString);
 
     // Calls the Display function
-    display();
-
-
-
+    display(reversedString);
 
 }
 
@@ -28,7 +26,7 @@ function getString () {
 
 function reverse(userString) {
 
-    reversedString = []
+    let reversedString = [];
 
     // Checks for length of the string and 
     // Decrements through the indices
@@ -38,8 +36,9 @@ function reverse(userString) {
      // Cleans up input (Take out spaces, reduce to lower case letters, ignore special characters); RegExp
         // if i is any charachter other than an upper or lower case letter, ignore
         
-     
-    
+     reversedString += userString[i];
+
+    /*
      // Else, 
      if (i )
 
@@ -54,11 +53,18 @@ function reverse(userString) {
 
    }
     // Test whether the user input string is the same as the reversed string. Use .includes() method
+*/
+   
+}
 
+return reversedString;
 
 }
 
-function display() {
+function display(reversedString) {
+
+document.getElementById("result").innerHTML = `Your text reversed is: ${reversedString}`;
+document.getElementById("alert").classList.remove("invisible");
 
 
 }   
