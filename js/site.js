@@ -1,4 +1,4 @@
-// ----- CONTROLLER function -----//
+// ----- CONTROL -----//
    
 function getUserString() {
 
@@ -10,68 +10,55 @@ function getUserString() {
     // Cleans up the user input (Ignores special characters, removes spaces, and converts all characters to lowercase) to facilitate comparison
     let cleanString = userString.replace(/[^a-zA-Z]/g, "").toLowerCase();
 
-    
-
-
     // Calls the Logic function and assigns the return value to a variable
-    let reversedString = reverse(userString);
+    let reversedString = reverse(cleanString);
+
+    if (reversedString == cleanString) {
 
     // Calls the Display function
-    display(reversedString);
+     display (userString);
+
+    } else {
+
+        document.getElementById("result").innerHTML = `That stinks...<br><br>"${userString}" is not a palindrome! Try again!`;
+        document.getElementById("alert").classList.remove("invisible");
 
 }
 
    
     
+}
 
+// ------ LOGIC -----//
 
-// ------ LOGIC function -----//
+function reverse(cleanString) {
 
-function reverse(userString) {
+    let reversedArray = [];
 
-    let reversedString = [];
-
-    // Checks for length of the string and 
-    // Decrements through the indices
+    // Checks for length of the string to decrement starting from last index
+   for (i = cleanString.length - 1; i >= 0; i--) {
     
-   for (i = userString.length - 1; i >= 0; i--) {
-    
-     // Cleans up input (Take out spaces, reduce to lower case letters, ignore special characters); RegExp
-        // if i is any charachter other than an upper or lower case letter, ignore
-        
-     reversedString += userString[i];
-
-    /*
-     // Else, 
-     if (i )
-
-
-    // Stores in new array
-    reversedString += userString[index];
+    // Adds each index value to the new array
+     reversedArray += cleanString[i];
 
    }
         
-   if reversedString == userString {
-
-
-   }
-    // Test whether the user input string is the same as the reversed string. Use .includes() method
-*/
-   
-}
-
-return reversedString;
+    return reversedArray;
 
 }
 
-function display(reversedString) {
+// ----- DISPLAY -----//
 
-document.getElementById("result").innerHTML = `Your text reversed is: ${reversedString}`;
+function display(userString) {
+
+
+
+
+document.getElementById("result").innerHTML = `You came out smelling like roses!!!<br><br>${userString} is a palindrome!`;
 document.getElementById("alert").classList.remove("invisible");
 
-
 }   
-// Display message confirming it is a palindrome or not
+
 
 
 
@@ -80,6 +67,6 @@ document.getElementById("alert").classList.remove("invisible");
 
 
 
-// DISPLAY functtion
+
 
 
