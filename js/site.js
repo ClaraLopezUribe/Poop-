@@ -1,14 +1,17 @@
 // ----- CONTROLLER function -----//
    
-function getString() {
+function getUserString() {
 
     document.getElementById("alert").classList.add("invisible");
 
-    // Gets the user input string from the DOM and assigns it to a variable
+    // Gets the user input from the DOM and assigns it to a variable
     let userString = document.getElementById("userString").value;
 
-    // Converts all of the character to lower case to allow for accurate comparison results
-    userString = userString.toLowerCase();
+    // Cleans up the user input (Ignores special characters, removes spaces, and converts all characters to lowercase) to facilitate comparison
+    let cleanString = userString.replace(/[^a-zA-Z]/g, "").toLowerCase();
+
+    
+
 
     // Calls the Logic function and assigns the return value to a variable
     let reversedString = reverse(userString);
