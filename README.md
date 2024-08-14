@@ -1,2 +1,2 @@
-# Site-Template for Portfolio
-JS site template
+# Poop!
+Use this Javascript program to check if your word, phrase, or sentence is a palindrome. Don't strain too hard coming up with your own hilarious examples!

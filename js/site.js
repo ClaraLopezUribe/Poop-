@@ -1,5 +1,5 @@
-// ----- CONTROL -----//
-   
+// ----- START -----//
+
 function prepUserString() {
 
     // Gets the user input from the DOM and assigns it to a variable
@@ -26,15 +26,15 @@ function checkPalindrome(cleanString, userString) {
     if (userString == "" || userString.length == 1) {
 
         message = `Yeah, ok...this is technically a palindrome, but why don't you "push" a little harder by using a few more characters`;
-
+ 
      } else if (reversedString == cleanString) {
-
-        message = `You came out smelling like roses!!!<br><br>${userString} is a palindrome!`;
-
-    } else {
-
+ 
+         message = `You came out smelling like roses!!!<br><br>${userString} is a palindrome!`;
+ 
+     } else {
+ 
          message = `Well, that stinks...<br><br>"${userString}" is not a palindrome! Try again!`;
-}
+     }
 
     displayResults(message);
 }
@@ -44,5 +44,5 @@ function checkPalindrome(cleanString, userString) {
 function displayResults(message) {
 
     document.getElementById("result").innerHTML = message;
-document.getElementById("alert").classList.remove("invisible");
+    document.getElementById("alert").classList.remove("invisible");
 }
