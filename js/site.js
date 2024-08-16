@@ -1,48 +1,59 @@
-// ----- START -----//
+// ----- CONTROL ----- //
 
-function prepUserString() {
+function initiate() {
 
-    // Gets the user input from the DOM and assigns it to a variable
+    // Resets alert box to invisible from previous uses
+    document.getElementById("alert").classList.add("invisible");
+
+    // Gets the user input from the DOM and assigns it to a variable so it can be accessed from another function
     let userString = document.getElementById("userString").value;
 
-    // Cleans up the user input (Ignores special characters, removes spaces, and converts all characters to lowercase) to facilitate comparison using two js methods
-    let cleanString = userString.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+    let returnObject = checkPalindrome(userString);
 
-    //Clears input field
-    document.getElementById("userString").value = "";
-
-    checkPalindrome(cleanString, userString);
+    displayResults(returnObject);
 }
-
 
 // ------ LOGIC -----//
 
-function checkPalindrome(cleanString, userString) {
+function checkPalindrome(userString) {
    
-    let reversedString = cleanString.split("").reverse().join("");
+    // Cleans up the user input to ignore special characters  and removes spaces (RegEx), and converts all characters to lowercase to facilitate comparison
+    let cleanString = userString.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
-    let message = "";
+    let reversedString = [];
+    let returnObject = {};
+     
+    // Checks for length of the string to decrement starting from last index. The same results can be achieved using a chain of methods as follows: let reversedString = cleanString.split("").reverse().join("");
+    for (let i = cleanString.length - 1; i >= 0; i--) {
+        // ???: Why use += versus .push?
+        reversedString += cleanString[i];
+    }
 
     if (userString == "" || userString.length == 1) {
 
-        message = `Yeah, ok...this is technically a palindrome, but why don't you "push" a little harder by using a few more characters`;
+        returnObject.message = "Yeah, ok...this is technically a palindrome, but why don't you 'push' a little harder by using a few more characters";
  
      } else if (reversedString == cleanString) {
  
-         message = `You came out smelling like roses!!!<br><br>${userString} is a palindrome!`;
+        returnObject.message = `You came out smelling like roses!!!<br><br>${userString} is a palindrome!`;
  
      } else {
  
-         message = `Well, that stinks...<br><br>"${userString}" is not a palindrome! Try again!`;
+        returnObject.message = `Well, that stinks...<br><br>"${userString}" is not a palindrome! Try again!`;
      }
 
-    displayResults(message);
+     returnObject.reversed = reversedString;
+
+    return returnObject;
 }
 
 // ----- DISPLAY -----//
 
-function displayResults(message) {
+function displayResults(returnObject) {
 
-    document.getElementById("result").innerHTML = message;
+    document.getElementById("alertHeader").innerHTML = `Your text reversed is: ${returnObject.reversed}`;
+    document.getElementById("result").innerHTML = returnObject.message;
     document.getElementById("alert").classList.remove("invisible");
+    //Clears input field
+    document.getElementById("userString").value = "";
 }
