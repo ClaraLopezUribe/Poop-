@@ -37,7 +37,7 @@ footer .social>a{
 
 footer .social>a:hover{
     opacity: .9;
-    color: var(--logo-secondary-color)
+    color: var(--logo-secondary-color);
 }
 
 
@@ -48,6 +48,16 @@ h1, h2, h3, h4, h5, h6{
 .subheading{
     color: var(--lightmode-accent);
 }
+
+.field-title{
+    color: var(--lightmode-primary);
+}
+
+.alert{
+    background-color: var(--dark);
+    color: var(--light);
+}
+
 
 main>.container{
     padding: 60px 15px 0;
