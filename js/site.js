@@ -35,7 +35,7 @@ function checkPalindrome(userString) {
  
      } else if (reversedString == cleanString) {
  
-        returnObject.message = `You came out smelling like roses!!!<br><br>${userString} is a palindrome!`;
+        returnObject.message = `You came out smelling like roses!!!<br><br>"${userString}" is a palindrome!`;
  
      } else {
  
@@ -54,6 +54,7 @@ function displayResults(returnObject) {
     document.getElementById("alertHeader").innerHTML = `Your text reversed is: ${returnObject.reversed}`;
     document.getElementById("result").innerHTML = returnObject.message;
     document.getElementById("alert").classList.remove("invisible");
+
     //Clears input field
-    document.getElementById("userString").value = "";
+    document.getElementById("userString").placeholder = "";
 }
