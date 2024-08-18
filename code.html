@@ -70,17 +70,17 @@
                     
                         // Resets alert box to invisible from previous uses
                         document.getElementById("alert").classList.add("invisible");
-
+                    
                         // Gets the user input from the DOM and assigns it to a variable so it can be accessed from another function
                         let userString = document.getElementById("userString").value;
-
+                        
                         let returnObject = checkPalindrome(userString);
-
+                    
                         displayResults(returnObject);
                     }
-
+                    
                     // ------ LOGIC -----//
-
+                    
                     function checkPalindrome(userString) {
                        
                         // Cleans up the user input to ignore special characters  and removes spaces (RegEx), and converts all characters to lowercase to facilitate comparison
@@ -94,39 +94,44 @@
                             // ???: Why use += versus .push?
                             reversedString += cleanString[i];
                         }
-
+                    
                         if (userString == "" || userString.length == 1) {
-
+                    
                             returnObject.message = "Yeah, ok...this is technically a palindrome, but why don't you 'push' a little harder by using a few more characters";
-                    
-                        } else if (reversedString == cleanString) {
-                    
+                     
+                         } else if (reversedString == cleanString) {
+                     
                             returnObject.message = `You came out smelling like roses!!!<br><br>"${userString}" is a palindrome!`;
-                    
-                        } else {
-                    
+                     
+                         } else {
+                     
                             returnObject.message = `Well, that stinks...<br><br>"${userString}" is not a palindrome! Try again!`;
-                        }
-
+                         }
+                    
                          returnObject.reversed = reversedString;
                     
                         return returnObject;
                     }
-
+                    
                     // ----- DISPLAY -----//
-
+                    
                     function displayResults(returnObject) {
-
+                    
                         document.getElementById("alertHeader").innerHTML = `Your text reversed is: ${returnObject.reversed}`;
                         document.getElementById("result").innerHTML = returnObject.message;
-                        document.getElementById("alert").classList.remove("invisible");
+                        document.getElementById("alert").classList.remove("invisible"); 
                     }
                 </code></pre>
             </div>
             <div class="col-lg-4 py-2">
-                <img src="img\poop-emoji.svg" alt="App Logo" width="300" height="300">
-                <p class="display-6 mt-4">The code is structured in ...functions:</p>
-                    <h2>helloWorld</h2>
+                <img src="img\poop-emoji.svg" alt="App Logo" class="img-fluid center-block d-block mb-auto" width="300" height="300">
+                    <a href="https://iconscout.com/icons/poop-emoji" class="text-underline font-size-sm" target="_blank">Poop Emoji</a> by <a href="https://iconscout.com/contributors/kolo-design" class="text-underline font-size-sm">Kalash</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>
+                <p class="display-6 mt-4">The code is structured in three functions:</p>
+                    <h2>The Control</h2>
+                    <p>This function...</p>
+                    <h2>The Logic</h2>
+                    <p>This function...</p>
+                    <h2>The Display</h2>
                     <p>This function...</p>
             </div>
         </div>

@@ -7,7 +7,7 @@ function initiate() {
 
     // Gets the user input from the DOM and assigns it to a variable so it can be accessed from another function
     let userString = document.getElementById("userString").value;
-
+    
     let returnObject = checkPalindrome(userString);
 
     displayResults(returnObject);
@@ -31,7 +31,7 @@ function checkPalindrome(userString) {
 
     if (userString == "" || userString.length == 1) {
 
-        returnObject.message = "Yeah, ok...this is technically a palindrome, but why don't you 'push' a little harder by using a few more characters";
+        returnObject.message = `Yeah, ok...0-1 character strings are technically a palindrome, but why don't you 'push' a little harder by using a few more characters`;
  
      } else if (reversedString == cleanString) {
  
@@ -55,3 +55,4 @@ function displayResults(returnObject) {
     document.getElementById("result").innerHTML = returnObject.message;
     document.getElementById("alert").classList.remove("invisible");
 }
+
