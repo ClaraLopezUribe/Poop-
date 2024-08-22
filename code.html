@@ -128,12 +128,13 @@
                 <img src="img/poop-emoji-color.svg" alt="Smiling poop emoji" class="img-fluid center-block d-block mb-auto" width="300" height="300">
                     <a href="https://iconscout.com/icons/poop-emoji" class="text-underline font-size-sm" target="_blank">Poop Emoji</a> by <a href="https://iconscout.com/contributors/kolo-design" class="text-underline font-size-sm">Kalash</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>
                 <p class="display-6 mt-4">The code is structured in three functions:</p>
-                    <h2>The Control</h2>
-                    <p>This function...</p>
-                    <h2>The Logic</h2>
-                    <p>This function...</p>
-                    <h2>The Display</h2>
-                    <p>This function...</p>
+                    <h2>initiate()</h2>
+                    <p>This function is triggered with an event listener when the user activates the button to submit their string. It's primary purpose is to retrieve the user input from the Document Object Model (DOM), declare and assign values to the variables that will be passed to other functions, and control the flow of the program with function calls </p>
+                    <h2>checkPalindrome(userString)</h2>
+                    <p>Using a chain of Javascript methods, this function prepares the userString for analysis by removing special characters and spaces, then converting all characters to lowercase. Then, using a decrementing for loop begining at the last index, each character of the resulting cleanString is stored in a new array in reverse order.</p>
+                    <p>Finally, several conditions are tested to determine if the userString meets the criteria to be a palindrome, and a unique message for each is defined in an if/else-if/else statement. The message, along with the reversedString are stored in an object to be passed to the next function.</p>
+                    <h2>displayResults(returnObject)</h2>
+                    <p>This function uses the getElementById method and innerHTML propery to locate and set the content of the corresponding elements to the value of the reversed and message keys in the returnObject. Then, the invisible class is removed from the div element containing the alert to display the message on the browser.</p>
             </div>
         </div>
     </div>
