@@ -134,7 +134,7 @@
                     <p>Using a chain of Javascript methods, this function prepares the userString for analysis by removing special characters and spaces, then converting all characters to lowercase. Then, using a decrementing for loop begining at the last index, each character of the resulting cleanString is stored in a new array in reverse order.</p>
                     <p>Finally, several conditions are tested to determine if the userString meets the criteria to be a palindrome, and a unique message for each is defined in an if/else-if/else statement. The message, along with the reversedString are stored in an object to be passed to the next function.</p>
                     <h2>displayResults(returnObject)</h2>
-                    <p>This function uses the getElementById method and innerHTML propery to locate and set the content of the corresponding elements to the value of the reversed and message keys in the returnObject. Then, the invisible class is removed from the div element containing the alert to display the message on the browser.</p>
+                    <p>This function uses the getElementById method and innerHTML propery to locate and set the content of the corresponding elements to the value of the reversed and message keys stored in the returnObject. Then, to display the message on the browser, the "invisible" class is removed from the div element containing the alert using the remove method on the classList propery.</p>
             </div>
         </div>
     </div>
